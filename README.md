@@ -2,7 +2,7 @@
 
 Написать сценарий, который находит все файлы не входящие в SVN/Git и перемещает их в ~/.Trash/.
 
-    git ls-files . --exclude-standard --others -z | xargs -0 -I {} mv {} ~/.Trash/
+    svn st | grep ^? | sed 's/^[? ]*//' | xargs -I {} mv {} ~/.Trash/
 
 присылайте пулл реквесты с решением для SVN или с более элегантным подходом.
 
